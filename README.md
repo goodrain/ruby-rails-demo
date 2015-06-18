@@ -1,36 +1,38 @@
-# Ruby Rails 示例程序
+# ruby-rails-sample
 
-## 项目介绍
+This is a simple Ruby app using the [Rails](http://rubyonrails.org) framework.
 
-本项目是一个简单的 Ruby [Rails](http://rubyonrails.org) 示例，Rails 版本为 `3.2.18`， 目录结构：
+## Running Locally
 
-```
-.
-├── Gemfile
-├── Gemfile.lock
-├── README.md
-├── README.rdoc
-├── Rakefile
-├── app
-├── config
-├── config.ru
-├── db
-├── doc
-├── lib
-├── log
-├── public
-├── script
-├── test
-├── tmp
-└── vendor
+Make sure you have [Ruby](https://www.ruby-lang.org), [Bundler](http://bundler.io) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
+
+```sh
+git clone git@github.com:heroku/ruby-rails-sample.git # or clone your own fork
+cd ruby-rails-sample
+bundle
+bundle exec rake bootstrap
+heroku local
 ```
 
-## 项目要求
+Your app should now be running on [localhost:5000](http://localhost:5000/).
 
-默认情况下 Rails 正常运行和测试都需要数据库配置，此处使用 rails new 生成的默认 `sqlite3` 配置，但实际没有用到。
+## Deploying to Heroku
 
-## 本地测试
+```
+heroku create
+git push heroku master
+heroku run rake db:migrate
+heroku open
+```
 
-1. 执行 `bundle install` 安装所需 gem 包。
-2. 执行 `rails server` 即可启动 web 服务器。
-3. 访问 <http://localhost:3000> 查看效果。
+Alternatively, you can deploy your own copy of the app using the web-based flow:
+
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+## Documentation
+
+For more information about using Ruby on Heroku, see these Dev Center articles:
+
+- [Ruby on Heroku](https://devcenter.heroku.com/categories/ruby)
+- [Getting Started with Ruby on Heroku](https://devcenter.heroku.com/articles/getting-started-with-ruby)
+- [Heroku Ruby Support](https://devcenter.heroku.com/articles/ruby-support)

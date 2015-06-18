@@ -1,4 +1,4 @@
-class HelloController < ApplicationController
+class WelcomeController < ApplicationController
   def index
   end
 
@@ -8,7 +8,6 @@ class HelloController < ApplicationController
     ENV.each do |key, value|
         html << "#{key}: #{value}\n"
     end
-
     render text: html, content_type: 'text/plain'
   end
 end
