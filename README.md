@@ -1,38 +1,50 @@
-# ruby-rails-sample
+# ruby-rails demo
 
-This is a simple Ruby app using the [Rails](http://rubyonrails.org) framework.
+本示例是一个简单的Ruby [Rails](http://rubyonrails.org) 框架代码.
 
-## Running Locally
 
-Make sure you have [Ruby](https://www.ruby-lang.org), [Bundler](http://bundler.io) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
+## 目录结构
+
+```bash
+├── app
+├── app.json
+├── bin
+├── config
+│   └── puma.rb   # puma 配置文件
+├── config.ru
+├── db
+├── Gemfile
+├── Gemfile.lock
+├── lib
+├── log
+├── Procfile   # 应用启动命令
+├── public
+├── Rakefile
+├── README.md
+├── test
+└── vendor
+```
+## 本示例说明
+
+- 默认情况下 Rails 正常运行和测试都需要数据库配置，此处使用 rails new 生成的默认 sqlite3 配置，但实际没有用到。生产环境可根据需求使用mysql或postgresql数据库
+- 修改Gemfile后需要本地执行 bundle lock --update 来重新生成Gemfile.lock文件，否则代码部署会失败
+
+## 本地运行
+
+请确认您的环境安装了 [Ruby](https://www.ruby-lang.org), [Bundler](http://bundler.io) 
 
 ```sh
-git clone git@github.com:heroku/ruby-rails-sample.git # or clone your own fork
-cd ruby-rails-sample
-bundle
-bundle exec rake bootstrap
-heroku local
+git clone http://code.goodrain.com/demo/ruby-rails.git
+cd ruby-rails
+bundle install # 安装所需 gem 包
+rails server # 可启动 web 服务器
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+访问 [localhost:5000](http://localhost:5000/).
 
-## Deploying to Heroku
 
-```
-heroku create
-git push heroku master
-heroku run rake db:migrate
-heroku open
-```
+## 文档
 
-Alternatively, you can deploy your own copy of the app using the web-based flow:
+更多信息请参见：
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using Ruby on Heroku, see these Dev Center articles:
-
-- [Ruby on Heroku](https://devcenter.heroku.com/categories/ruby)
-- [Getting Started with Ruby on Heroku](https://devcenter.heroku.com/articles/getting-started-with-ruby)
-- [Heroku Ruby Support](https://devcenter.heroku.com/articles/ruby-support)
+- [Ruby on Goodrain](http://docs.goodrain.com/languages/ruby.html)
