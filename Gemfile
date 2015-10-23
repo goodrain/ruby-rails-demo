@@ -1,5 +1,8 @@
 source 'http://rubygems-china.oss.aliyuncs.com/'
 
+# 注意：日本节点请将源修改为海外地址
+# source 'https://rubygems.org'
+
 ruby '2.2.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
